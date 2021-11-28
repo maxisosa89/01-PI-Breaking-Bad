@@ -1,0 +1,47 @@
+import axios from "axios";
+
+export function getCharacters() {
+    return async function(dispatch){
+        var json = await axios.get("http://localhost:3001/characters",{})
+        return dispatch ({
+            type: "GET_CHARACTERS",
+            payload: json.data
+        })
+    }
+}
+
+export function getNameCharacter(payload) {
+    return async function(dispatch){
+        try {
+            let json = await axios.get('http://localhost:3001/characters?name=' + payload)
+            return dispatch({
+                type: 'GET_NAME_CHARACTER',
+                payload: json.data
+            })
+        } catch (err){
+            console.log("Not found")
+        }
+    }
+
+}
+
+export function orderByName(payload){
+    return {
+        type: 'ORDER_BY_NAME',
+        payload
+    }
+}
+
+export function filterByStatus(payload){
+    return {
+        type: 'FILTER_BY_STATUS',
+        payload
+    }
+}
+
+export function filterByCreate(payload){
+    return {
+        type: 'FILTER_BY_CREATE',
+        payload
+    }
+}
