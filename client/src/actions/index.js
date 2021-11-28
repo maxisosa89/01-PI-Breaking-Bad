@@ -45,3 +45,17 @@ export function filterByCreate(payload){
         payload
     }
 }
+
+export function getDetail(payload){
+    return async function (dispatch){
+        try {
+            const json = await axios.get("http://localhost:3001/character/" + payload)
+            return dispatch({
+                type: "GET_DETAILS",
+                payload: json.data
+            })
+        } catch(err){
+            console.log("Id not found")
+        }
+    }
+}

@@ -1,6 +1,7 @@
 const initialState = {
     characters: [],
-    all: []
+    all: [],
+    detail: []
 }
 
 function rootReducer (state= initialState, action) {
@@ -41,7 +42,7 @@ function rootReducer (state= initialState, action) {
                 action.payload === "Status" ?
                 allCharacters :
                 allCharacters.filter(el => el.status === action.payload)
-            console.log(statusFiltered)
+
 
             return{
                 ...state,
@@ -59,6 +60,11 @@ function rootReducer (state= initialState, action) {
             return {
                 ...state,
                 characters: createFiltered
+            }
+        case "GET_DETAILS":
+            return {
+                ...state,
+                detail: action.payload
             }
         default: return state
 
