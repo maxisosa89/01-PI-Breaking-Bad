@@ -1,0 +1,19 @@
+.liPaged {
+    list-style: none;
+    display: inline-block;
+    margin: 15px;
+}
+
+.btnPaged {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    background-color: #00401e;
+    color: white;
+    border: white solid 1px;
+}
+
+.btnPaged:hover {
+    cursor: pointer;
+    opacity: 80%;
+}

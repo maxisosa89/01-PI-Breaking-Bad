@@ -5,6 +5,7 @@ import { getCharacters, getNameCharacter, orderByName, filterByStatus, filterByC
 import { Link } from 'react-router-dom';
 import Paged from './Paged'
 import Card from './Card'
+import styles from './styles/Home.module.css'
 
 export default function LandingPage(){
 
@@ -12,7 +13,7 @@ export default function LandingPage(){
     const allCharacters = useSelector((state) => state.characters)
     const imageDefault = ""
     const [currentPage, setCurrentPage] = useState(1)
-    const [charactersPerPage, setCharacterPerPage] = useState(9)
+    const [charactersPerPage, setCharacterPerPage] = useState(6)
     const indexOfLastCharacter = currentPage * charactersPerPage
     const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage
     const currentCharacter = allCharacters.slice(indexOfFirstCharacter, indexOfLastCharacter)
@@ -61,56 +62,59 @@ export default function LandingPage(){
     
     return (
         <div>
+            <div className={styles.fixedNavHome}>
+                <nav className={styles.navHome}>
+                    
+                  
+                    <Link to = '/' className={styles.containerTitleHome}>
+                        <h3 className={styles.titleHome}>Breaking Bad</h3>
+                    </Link>
+         
+                    <button onClick={e => {handleClick(e)}} className={styles.btnHome}>Refresh</button>
+                    <div className={styles.containerSearchBarHome}>
+                        <input type="text" placeholder="Search character..." onChange={(e) => handleInputChange(e)} />
+                        <button type='submit' onClick={(e) => handleSubmit(e)} className={styles.btnHome}>Search</button>
+                    </div>
+                    <Link to = "/character" className={styles.containerCreateHome}>
+                        <h3 className={styles.createHome}>Create your character!</h3>
+                    </Link>
 
-            <nav>
-                
-                <Link to = '/'>
-                    <h3>Breaking Bad</h3>
-                </Link>
-
-                <button onClick={e => {handleClick(e)}}>Refresh</button>
-
-                <input type="text" placeholder="Search character..." onChange={(e) => handleInputChange(e)} />
-                <button type='submit' onClick={(e) => handleSubmit(e)}>Search</button>
-
-                <Link to = "/character">
-                    <h3>Create your character!</h3>
-                </Link>
-
-            </nav>
+                </nav>
 
 
-            <div>
+                <div className={styles.containerFiltersHome}>
 
-                <select onChange={e => {handleOrderByName(e)}}>
-                    <option value="order">Order By</option>
-                    <option value="a-z">A-Z</option>
-                    <option value="z-a">Z-A</option>
-                </select>
+                    <select onChange={e => {handleOrderByName(e)}} className={styles.selectHome}>
+                        <option value="order">Order By</option>
+                        <option value="a-z">A-Z</option>
+                        <option value="z-a">Z-A</option>
+                    </select>
 
-                <select onChange={e => {handleFilterStatus(e)}}>    
-                    <option value="Status" >Status</option>
-                    <option value="Alive" >Alive</option>
-                    <option value="Deceased" >Deceased</option>
-                    <option value="Presumed dead" >Presumed dead</option>
-                    <option value="Unknown" >Unknown</option>
-                </select>
+                    <select onChange={e => {handleFilterStatus(e)}} className={styles.selectHome}>    
+                        <option value="Status" >Status</option>
+                        <option value="Alive" >Alive</option>
+                        <option value="Deceased" >Deceased</option>
+                        <option value="Presumed dead" >Presumed dead</option>
+                        <option value="Unknown" >Unknown</option>
+                    </select>
 
-                <select onChange={e => {handleFilterCreate(e)}}>    
-                    <option value="DB-Api" >DB-Api</option>
-                    <option value="Create" >Create</option>
-                    <option value="Existent" >Existent</option>
-                </select>
+                    <select onChange={e => {handleFilterCreate(e)}} className={styles.selectHome}>    
+                        <option value="DB-Api" >DB-Api</option>
+                        <option value="Create" >Create</option>
+                        <option value="Existent" >Existent</option>
+                    </select>
 
+                </div>
+                <div className={styles.pagedHome}>
+                    <Paged 
+                        charactersPerPage={charactersPerPage}
+                        allCharacters={allCharacters.length}
+                        paged={paged}
+                    />
+                </div>
             </div>
 
-            <Paged 
-                charactersPerPage={charactersPerPage}
-                allCharacters={allCharacters.length}
-                paged={paged}
-            />
-
-
+            <div className={styles.cardsHome}>
             {
                 currentCharacter?.map(e=>{
                     return (
@@ -120,12 +124,14 @@ export default function LandingPage(){
                                     name={e.name}
                                     nickname={e.nickname}
                                     img={e.img}
+                                    status={e.status}
                                 />
                             </Link>
                         </div>
                     )
                 })
             }
+            </div>
 
 
         </div>

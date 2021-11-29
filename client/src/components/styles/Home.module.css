@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fixedNavHome {
+    width: 100%;
+    background-color: black;
+    
+    position: fixed;
+    top: 0;
+    
+}
+
+
+.navHome {
+    background-color: #00401e;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 60px;
+
+}
+
+.containerFiltersHome {
+    background-color: #10772a;
+}
+
+.selectHome {
+    height: 25px;
+    font-size: 20px;
+    background-color: #00401e;
+    color: white;
+    border-color: white;
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+.selectHome:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.pagedHome {
+    background-color: #10772a;
+}
+
+.cardsHome {
+    margin: auto;
+    margin-top: 300px;
+}
+
+.titleHome {
+    font-size: 30px;
+    color: white;
+    
+}
+
+.createHome {
+    font-size: 20px;
+    color: white;
+}
+
+.containerTitleHome {
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.containerCreateHome {
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.containerSearchBarHome input, button {
+    height: 25px;
+    margin: 5px;
+    margin-top: 13px;
+    font-size: 20px;
+}
+
+.btnHome {
+    height: 25px;
+    font-size: 20px;
+    background-color: #00401e;
+    color: white;
+    border: white solid 1px;
+}
+
+.btnHome:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
