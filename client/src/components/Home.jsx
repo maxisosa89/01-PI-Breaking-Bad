@@ -61,7 +61,7 @@ export default function LandingPage(){
     }
     
     return (
-        <div>
+        <div className={styles.containerGlobalHome}>
             <div className={styles.fixedNavHome}>
                 <nav className={styles.navHome}>
                     
@@ -114,12 +114,12 @@ export default function LandingPage(){
                 </div>
             </div>
 
-            <div className={styles.cardsHome}>
+            <div className={styles.containerCardsHome}>
             {
                 currentCharacter?.map(e=>{
                     return (
-                        <div>
-                            <Link to = {"/character/" + e.char_id}>
+                        <div className={styles.cardHome}>
+                            <Link to = {"/character/" + e.char_id} className={styles.linkCardHome}>
                                 <Card 
                                     name={e.name}
                                     nickname={e.nickname}

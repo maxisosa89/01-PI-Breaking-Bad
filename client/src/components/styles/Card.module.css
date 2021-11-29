@@ -3,6 +3,57 @@
     padding: 0;
 }
 
+
+
+.containerGlobalCard {
+    background-color: #10772a;
+    border: #00401e solid;
+    height: 300px;
+    width: 400px;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.containerTextCard {
+
+    width: 90%;
+    height: 90%;
+    margin: auto;
+
+    
+}
+
+.containerNicknameCard {
+    background-color: #00401e;
+    border: #00401e solid;
+    margin-top: 30px;
+}
+
+.containerStatusCard {
+    background-color: #00401e;
+    border: #00401e solid;
+    margin-top: 50px;
+}
+
+
+
+.containerImgCard {
+    background-color: #10772a;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr
+
+}
+
 .imgCard {
-    width: 10%;
+    margin: auto;
+    width: 95%;
+    border: #00401e solid;
+}
+
+.h3Card {
+    color: white;
 }

@@ -3,13 +3,18 @@
     padding: 0;
 }
 
+.containerGlobalHome{
+    background-color: #ffcc12;
+    padding-top: 170px;
+    padding-bottom: 25px;
+}
+
 .fixedNavHome {
     width: 100%;
     background-color: black;
-    
     position: fixed;
     top: 0;
-    
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, .5);
 }
 
 
@@ -46,9 +51,14 @@
     background-color: #10772a;
 }
 
-.cardsHome {
+.containerCardsHome {
     margin: auto;
-    margin-top: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cardHome {
+    margin: auto;
 }
 
 .titleHome {
@@ -90,4 +100,8 @@
 .btnHome:hover {
     cursor: pointer;
     opacity: 80%;
+}
+
+.linkCardHome {
+    text-decoration: none;
 }
