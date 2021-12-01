@@ -55,11 +55,14 @@
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    
 }
 
 .cardHome {
     margin: auto;
+    
 }
+
 
 .titleHome {
     font-size: 30px;

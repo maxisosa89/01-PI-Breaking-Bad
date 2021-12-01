@@ -1,0 +1,122 @@
+.containerGlobalDetail {
+    background-color: #ffcc12;
+    padding-top: 80px;
+    padding-bottom: 25px;
+}
+
+.navDetail {
+    background-color: #00401e;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, .5);
+
+    
+}
+
+.containerTitleDetail {
+    text-decoration: none;
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.titleDetail {
+    font-size: 30px;
+    color: white;
+}
+
+.btnDetail {
+    margin-right: 20px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #00401e;
+    color: white;
+    border: white solid 1px;
+}
+
+.btnDetail:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.containerInfo {
+    background-color: #10772a;
+    width: 70%;
+    margin: auto;
+    height: 520px;
+
+}
+
+.containerImgDetail {
+    width: 90%;
+    height: 520px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.imgDetail {
+    border: #00401e solid;
+    width: 90%;
+    margin: auto;
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
+}
+
+.containerCharacter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    border: #00401e solid;
+    background-color: #10772a;
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
+}
+
+.containerNamesDetail {
+    width: 90%;
+    height: 350px;
+    margin: auto;
+    background-color: #00401e;
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
+}
+
+
+.containerTitleNameDetail {
+    margin-top: 10px;
+}
+
+.containerBirthdayDetail {
+    margin-top: 75px;
+}
+
+.containerNickDetail {
+    margin-top: 50px;
+}
+
+.containerIdDetail {
+    width: 90%;
+    height: 350px;
+    margin: auto;
+    background-color: #00401e;  
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
+}
+
+.containerTitleIdDetail {
+    margin-top: 200px;
+}
+
+.containerTitleIdDetail {
+    margin-top: 10px;
+}
+
+.containerStatusDetail{
+    margin-top: 75px;
+}
+
+.containerOccDetail {
+    margin-top: 50px;
+}

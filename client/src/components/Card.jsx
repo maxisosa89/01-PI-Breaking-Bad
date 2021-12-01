@@ -13,12 +13,12 @@ export default function Card({ name, nickname, img, status }){
             <div className={styles.containerTextCard}>
             
             <div className={styles.containerNicknameCard}>
-            <h3 className={styles.h3Card}>{nickname}</h3>
+            <h3 className={styles.h3Card}>{name}</h3>
             </div>
             
             <div className={styles.containerStatusCard}>
-            <h3 className={styles.h3Card}>Name:</h3>
-            <h3 className={styles.h3Card}>{name}</h3>
+            <h3 className={styles.h3Card}>Nickname:</h3>
+            <h3 className={styles.h3Card}>{nickname}</h3>
             <h3 className={styles.h3Card}>Status:</h3>
             <h3 className={styles.h3Card}>{status}</h3>
             </div>

@@ -13,6 +13,7 @@
     margin: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
 }
 
 .containerTextCard {
@@ -20,7 +21,7 @@
     width: 90%;
     height: 90%;
     margin: auto;
-
+    
     
 }
 
@@ -28,12 +29,14 @@
     background-color: #00401e;
     border: #00401e solid;
     margin-top: 30px;
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
 }
 
 .containerStatusCard {
     background-color: #00401e;
     border: #00401e solid;
     margin-top: 50px;
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
 }
 
 
@@ -52,6 +55,7 @@
     margin: auto;
     width: 95%;
     border: #00401e solid;
+    box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
 }
 
 .h3Card {
