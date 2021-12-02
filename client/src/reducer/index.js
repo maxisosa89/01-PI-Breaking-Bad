@@ -1,7 +1,8 @@
 const initialState = {
     characters: [],
     all: [],
-    detail: []
+    detail: [],
+    occupations: []
 }
 
 function rootReducer (state= initialState, action) {
@@ -65,6 +66,15 @@ function rootReducer (state= initialState, action) {
             return {
                 ...state,
                 detail: action.payload
+            }
+        case "GET_OCCUPATIONS":
+            return {
+                ...state,
+                occupations: action.payload
+            }
+        case "POST_CHARACTER":
+            return {
+                ...state
             }
         default: return state
 

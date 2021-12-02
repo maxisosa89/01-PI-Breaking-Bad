@@ -1,0 +1,41 @@
+.navForm {
+    background-color: #00401e;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, .5);
+}
+
+.containerTitleForm {
+    text-decoration: none;
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.titleForm {
+    font-size: 30px;
+    color: white;
+}
+
+.btnForm {
+    margin-right: 20px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #00401e;
+    color: white;
+    border: white solid 1px;
+}
+
+.btnForm:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.containerGlobalForm {
+    background-color: #ffcc12;
+    padding-top: 80px;
+    padding-bottom: 25px;
+}

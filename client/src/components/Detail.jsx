@@ -28,7 +28,7 @@ export default function Detail(){
 
             </nav>
 
-            <div className={styles.containerInfo}>
+            <div className={styles.containerInfoDetail}>
                 {
                     myCharacter.length > 0 ?
 

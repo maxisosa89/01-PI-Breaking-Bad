@@ -59,3 +59,20 @@ export function getDetail(payload){
         }
     }
 }
+
+export function getOccupations() {
+    return async function (dispatch){
+        const info = await axios.get('http://localhost:3001/occupations', {})
+        return dispatch({
+            type: "GET_OCCUPATIONS",
+            payload: info.data
+        })
+    }
+}
+
+export function postCharacter(payload) {
+    return async function(dispatch){
+        const info = await axios.post("http://localhost:3001/character", payload)
+        return info
+    }
+}
