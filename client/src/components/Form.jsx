@@ -22,9 +22,45 @@ export default function Form(){
     useEffect(()=>{
         dispatch(getOccupations())
     }, [dispatch])
-    console.log("ESTO ES OCC: " + occ[0])
-    function handleChange(e){
 
+    function handleChange(e){
+        setInput({
+            ...input,
+            [e.target.name]: e.target.value
+        })
+        console.log(input)
+    }
+
+    function handleCheck(e) {
+        if (e.target.checked) {
+            setInput({
+                ...input,
+                status: e.target.value
+            })
+        }
+    }
+
+    function handleSelect(e) {
+        setInput({
+            ...input,
+            occupations: [...input.occupations, e.target.value]
+        })
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(input);
+        dispatch(postCharacter(input));
+        alert("Character created.");
+        setInput({
+            name: "",
+            nickname: "",
+            birthday: "",
+            status: "",
+            img: "",
+            occupations: []
+        })
+        navigate('/home')
     }
 
     return (
@@ -48,7 +84,7 @@ export default function Form(){
                 <h1>Create your character!</h1>
                 
                 <div className={styles.containerInputsForm}>
-                    <form>
+                    <form onSubmit={e=>handleSubmit(e)}>
                         
                         <h4>Name*:</h4>
                         <input 
@@ -84,35 +120,42 @@ export default function Form(){
                             type="checkbox"
                             value="Alive"
                             name="Alive"
-                            onChange={e => handleChange(e)} />Alive</label> 
+                            onChange={e => handleCheck(e)} />Alive</label> 
                         <label><input 
                             type="checkbox"
                             value="Deceased"
                             name="Deceased"
-                            onChange={e => handleChange(e)} />Deceased</label>  
+                            onChange={e => handleCheck(e)} />Deceased</label>  
                         <label><input 
                             type="checkbox"
                             value="Presumed dead"
                             name="Presumed dead"
-                            onChange={e => handleChange(e)} />Presumed dead</label>  
+                            onChange={e => handleCheck(e)} />Presumed dead</label>  
                         <label><input 
                             type="checkbox"
                             value="Unknown"
                             name="Unknown"
-                            onChange={e => handleChange(e)} />Unknown</label>  
+                            onChange={e => handleCheck(e)} />Unknown</label>  
 
                         <h4>Occupations:</h4>
-                        <select>
-                            <option value={occ.name}>{occ}</option>
-                        </select>          
+                        <select onChange={e => handleSelect(e)}>
+                            <option value="Occupations">Occupations</option>
+                            {
+                                occ.map(el => (
+                                    <option value={el.name}>{el.name}</option>
+                                ))
+                            }
+                        </select>         
+                        <ul><li>{input.occupations.map(el => el + ". ")}</li></ul>
+                        <div className={styles.containerBtnForm}>
+                            <button type='submit'>Create</button>
+
+                         </div> 
                 
                     </form>
                 </div>
 
-                    <div className={styles.containerBtnForm}>
-                        <button type='submit'>Create</button>
-
-                    </div>
+                    
                     
 
             </div>

@@ -62,11 +62,18 @@ export function getDetail(payload){
 
 export function getOccupations() {
     return async function (dispatch){
-        const info = await axios.get('http://localhost:3001/occupations', {})
-        return dispatch({
-            type: "GET_OCCUPATIONS",
-            payload: info.data
-        })
+
+        try{
+            const info = await axios.get('http://localhost:3001/occupations', {})
+
+            return dispatch({
+                type: "GET_OCCUPATIONS",
+                payload: info.data
+            })
+        }catch(err){
+            console.log("Error")
+        }
+
     }
 }
 
