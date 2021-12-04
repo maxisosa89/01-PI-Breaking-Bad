@@ -39,3 +39,46 @@
     padding-top: 80px;
     padding-bottom: 25px;
 }
+
+.containerInfoForm {
+    background-color: #10772a;
+    width: 60%;
+    margin: auto;
+    color: white;
+    border: #00401e solid;
+}
+
+.containerStatusForm {
+    display: grid;
+    text-align: left;
+    margin-left: 125px;
+}
+
+
+.containerInputsForm {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.ulForm {
+    list-style: none;
+}
+
+.btnXForm {
+    background-color: red;
+    font-size: 15px;
+    width: 15px;
+    height: 20px;
+    color: white;
+}
+
+.btnXForm:hover {
+    background-color: crimson;
+    cursor: pointer;
+}

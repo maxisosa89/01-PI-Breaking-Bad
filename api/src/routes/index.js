@@ -62,26 +62,31 @@ router.get('/characters', async (req, res) => {
 })
 
 router.get('/occupations', async (req, res) => {
-    const charactersTotal = await getAllCharacters();
-    const aux = await charactersTotal.map(el => el.occupation);
-    let occupationsApi = [];
-    //[ [], [], [] ]
-    for (let i = 0; i < aux.length; i++){
-        for (let j = 0; j < aux[i].length; j++){
-            occupationsApi.push(aux[i][j]);
+    let occupationsDb = await Occupation.findAll()
+    if (occupationsDb.length===0){
+        const charactersTotal = await getAllCharacters();
+        const aux = await charactersTotal.map(el => el.occupation);
+        let occupationsApi = [];
+        //[ [], [], [] ]
+        console.log("aux")
+        console.log(aux)
+        for (let i = 0; i < aux.length; i++){
+            for (let j = 0; j < aux[i].length; j++){
+                occupationsApi.push(aux[i][j]);
+            }
+
         }
-
-    }
-    occupationsApi = occupationsApi.filter((el, i)=>{
-        return occupationsApi.indexOf(el) === i;
-    })
-
-    occupationsApi.forEach(el => {
-        Occupation.findOrCreate({
-            where: {name: el}
+        occupationsApi = occupationsApi.filter((el, i)=>{
+            return occupationsApi.indexOf(el) === i;
         })
-    });
-    const occupationsDb = await Occupation.findAll()
+
+        occupationsApi.forEach(el => {
+            Occupation.findOrCreate({
+                where: {name: el}
+            })
+        });
+        occupationsDb = await Occupation.findAll()
+    }
     res.send(occupationsDb)
 })
 
@@ -117,11 +122,10 @@ router.get('/character/:id', async (req, res) => {
 })
 
 router.post('/character', async (req, res) => {
-    const { name, nickname, birthday, status, img, db, occupation } = req.body;
-
+    const { name, nickname, birthday, status, img, db, occupations } = req.body;
     let charCreate = await Character.create({ name, nickname, birthday, status, img, db });
     let occCreate = await Occupation.findAll({
-        where: {name: occupation}
+        where: {name: occupations}
     })
     charCreate.addOccupation(occCreate);
     res.json('Recipe created');

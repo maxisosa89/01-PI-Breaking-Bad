@@ -80,6 +80,9 @@ export function getOccupations() {
 export function postCharacter(payload) {
     return async function(dispatch){
         const info = await axios.post("http://localhost:3001/character", payload)
+        console.log("OCC")
+        console.log(payload)
+    
         return info
     }
 }
