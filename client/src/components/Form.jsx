@@ -20,7 +20,6 @@ export default function Form(){
     const occ = useSelector((state) => state.occupations)
     const [errors, setErrors] = useState({})
     
-    
     const [input, setInput] = useState({
         name: "",
         nickname: "",
@@ -103,24 +102,16 @@ export default function Form(){
 
     return (
         <div className={styles.containerGlobalForm}>
-
             <nav className={styles.navForm}>
-                
                 <Link to = '/' className={styles.containerTitleForm}>
                     <h3 className={styles.titleForm}>Breaking Bad</h3>
                 </Link>
                 <Link to = '/home'>
                     <button className={styles.btnForm}>Go home</button>
                 </Link>
-
             </nav>
-
-
-         
             <div className={styles.containerInfoForm}>
-               
                 <h1>Create your character!</h1>
-                
                 <div className={styles.containerInputsForm}>
                     <form onSubmit={e=>handleSubmit(e)}>
                         <div className={styles.containerLeftBox}>
@@ -130,7 +121,8 @@ export default function Form(){
                                     type="text"
                                     value={input.name}
                                     name="name"
-                                    onChange={e => handleChange(e)} />
+                                    onChange={e => handleChange(e)}
+                                    autocomplete="off"/>
                             </div>
                             <div>
                                 <h4>Nickname*:</h4>
@@ -138,7 +130,8 @@ export default function Form(){
                                     type="text"
                                     value={input.nickname}
                                     name="nickname"
-                                    onChange={e => handleChange(e)} />        
+                                    onChange={e => handleChange(e)}
+                                    autocomplete="off" />        
                             </div>
                             <div>
                                 <h4>Birthday*:</h4>
@@ -146,14 +139,16 @@ export default function Form(){
                                     type="text"
                                     value={input.birthday}
                                     name="birthday"
-                                    onChange={e => handleChange(e)} />
+                                    onChange={e => handleChange(e)}
+                                    autocomplete="off" />
                             </div>
                             <h4>Image URL:</h4>
                             <input 
                                 type="text"
                                 value={input.img}
                                 name="img"
-                                onChange={e => handleChange(e)} />
+                                onChange={e => handleChange(e)}
+                                autocomplete="off" />
                         </div>
                         <div className={styles.containerRightBox}>
                                 <h4>Status*:</h4>
@@ -188,17 +183,15 @@ export default function Form(){
                                     ))
                                 }
                             </select>
-                            
                         </div>
                         <div className={styles.containerBtnForm}>
-                            <button type='submit'>Create</button>
+                            <button type='submit' className={styles.btnCreateForm}>Create</button>
                             {
                                 errors.error && (
                                     <p>{errors.error}</p>
                                 )
                             }
                          </div> 
-                
                     </form>
                     <div>
                         <h4>Occupations selected:</h4>
@@ -211,16 +204,7 @@ export default function Form(){
                         </ul>
                     </div>
                 </div>
-
-                    
-                    
-
             </div>
-
-
         </div>
-
-
     )
-
 }

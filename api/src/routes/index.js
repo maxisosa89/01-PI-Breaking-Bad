@@ -2,15 +2,7 @@ const { Router } = require('express');
 const axios = require('axios');
 const { Character, Occupation } = require('../db');
 
-
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
-
 const router = Router();
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
 
 const getApiInfo = async () => {
     const apiUrl = await axios.get('https://www.breakingbadapi.com/api/characters')
@@ -67,19 +59,14 @@ router.get('/occupations', async (req, res) => {
         const charactersTotal = await getAllCharacters();
         const aux = await charactersTotal.map(el => el.occupation);
         let occupationsApi = [];
-        //[ [], [], [] ]
-        console.log("aux")
-        console.log(aux)
         for (let i = 0; i < aux.length; i++){
             for (let j = 0; j < aux[i].length; j++){
                 occupationsApi.push(aux[i][j]);
             }
-
         }
         occupationsApi = occupationsApi.filter((el, i)=>{
             return occupationsApi.indexOf(el) === i;
         })
-
         occupationsApi.forEach(el => {
             Occupation.findOrCreate({
                 where: {name: el}

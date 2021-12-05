@@ -3,8 +3,6 @@
     padding: 0;
 }
 
-
-
 .containerGlobalCard {
     background-color: #10772a;
     border: #00401e solid;
@@ -17,12 +15,9 @@
 }
 
 .containerTextCard {
-
     width: 90%;
     height: 90%;
     margin: auto;
-    
-    
 }
 
 .containerNicknameCard {
@@ -39,8 +34,6 @@
     box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
 }
 
-
-
 .containerImgCard {
     background-color: #10772a;
     width: 90%;
@@ -48,12 +41,11 @@
     margin: auto;
     display: grid;
     grid-template-columns: 1fr
-
 }
 
 .imgCard {
     margin: auto;
-    width: 95%;
+    width: 85%;
     border: #00401e solid;
     box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
 }

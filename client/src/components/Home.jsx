@@ -49,7 +49,6 @@ export default function LandingPage(){
         dispatch(orderByName(e.target.value))
         setCurrentPage(1)
         setOrderByN(e.target.value)
-
     }
 
     function handleFilterStatus (e){
@@ -64,12 +63,9 @@ export default function LandingPage(){
         <div className={styles.containerGlobalHome}>
             <div className={styles.fixedNavHome}>
                 <nav className={styles.navHome}>
-                    
-                  
                     <Link to = '/' className={styles.containerTitleHome}>
                         <h3 className={styles.titleHome}>Breaking Bad</h3>
                     </Link>
-         
                     <button onClick={e => {handleClick(e)}} className={styles.btnHome}>Refresh</button>
                     <div className={styles.containerSearchBarHome}>
                         <input type="text" placeholder="Search character..." onChange={(e) => handleInputChange(e)} />
@@ -78,18 +74,13 @@ export default function LandingPage(){
                     <Link to = "/character" className={styles.containerCreateHome}>
                         <h3 className={styles.createHome}>Create your character!</h3>
                     </Link>
-
                 </nav>
-
-
                 <div className={styles.containerFiltersHome}>
-
                     <select onChange={e => {handleOrderByName(e)}} className={styles.selectHome}>
                         <option value="order">Order By</option>
                         <option value="a-z">A-Z</option>
                         <option value="z-a">Z-A</option>
                     </select>
-
                     <select onChange={e => {handleFilterStatus(e)}} className={styles.selectHome}>    
                         <option value="Status" >Status</option>
                         <option value="Alive" >Alive</option>
@@ -97,13 +88,11 @@ export default function LandingPage(){
                         <option value="Presumed dead" >Presumed dead</option>
                         <option value="Unknown" >Unknown</option>
                     </select>
-
                     <select onChange={e => {handleFilterCreate(e)}} className={styles.selectHome}>    
                         <option value="DB-Api" >DB-Api</option>
                         <option value="Create" >Create</option>
                         <option value="Existent" >Existent</option>
                     </select>
-
                 </div>
                 <div className={styles.pagedHome}>
                     <Paged 
@@ -113,7 +102,6 @@ export default function LandingPage(){
                     />
                 </div>
             </div>
-
             <div className={styles.containerCardsHome}>
             {
                 currentCharacter?.map(e=>{
@@ -132,8 +120,6 @@ export default function LandingPage(){
                 })
             }
             </div>
-
-
         </div>
     )
 }

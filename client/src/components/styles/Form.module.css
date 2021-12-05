@@ -82,3 +82,16 @@ input {
     background-color: crimson;
     cursor: pointer;
 }
+
+.btnCreateForm {
+    height: 30px;
+    font-size: 20px;
+    background-color: #00401e;
+    color: white;
+    border: white solid 1px;
+}
+
+.btnCreateForm:hover {
+    cursor: pointer;
+    opacity: 80%;
+}

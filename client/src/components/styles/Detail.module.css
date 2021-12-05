@@ -13,8 +13,6 @@
     position: fixed;
     top: 0;
     box-shadow: 1px 2px 1px rgba(0, 0, 0, .5);
-
-    
 }
 
 .containerTitleDetail {
@@ -47,7 +45,6 @@
     width: 70%;
     margin: auto;
     height: 520px;
-
 }
 
 .containerImgDetail {
@@ -57,7 +54,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .imgDetail {
@@ -83,7 +79,6 @@
     background-color: #00401e;
     box-shadow: 3px 6px 3px rgba(0, 0, .5, .5);
 }
-
 
 .containerTitleNameDetail {
     margin-top: 10px;

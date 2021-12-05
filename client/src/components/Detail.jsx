@@ -16,22 +16,17 @@ export default function Detail(){
     console.log(myCharacter)
     return (
         <div className={styles.containerGlobalDetail}>
-            
             <nav className={styles.navDetail}>
-                
                 <Link to = '/' className={styles.containerTitleDetail}>
                     <h3 className={styles.titleDetail}>Breaking Bad</h3>
                 </Link>
                 <Link to = '/home'>
                     <button className={styles.btnDetail}>Go home</button>
                 </Link>
-
             </nav>
-
             <div className={styles.containerInfoDetail}>
                 {
                     myCharacter.length > 0 ?
-
                     <div className={styles.containerCharacter}>
                         <div className={styles.containerImgDetail}>
                             <img src={myCharacter[0].img} alt="Not found" className={styles.imgDetail} />
@@ -48,7 +43,6 @@ export default function Detail(){
                                 <h3>Nickname:</h3>
                                 <h3>{myCharacter[0].nickname}</h3>
                             </div>
-                            
                         </div>
                         <div className={styles.containerIdDetail}>
                             <div className={styles.containerTitleIdDetail}>
@@ -65,9 +59,7 @@ export default function Detail(){
                             </div>
                         </div>
                     </div>
-
                     :
-
                     Object.values(myCharacter).length > 0 ?
                     <div className={styles.containerCharacter}>
                         <div className={styles.containerImgDetail}>
@@ -104,11 +96,7 @@ export default function Detail(){
                     :
                     <p>Loading...</p>
                 }
-
             </div>
-
-
-
         </div>
     )
 }

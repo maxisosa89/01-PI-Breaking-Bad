@@ -43,8 +43,6 @@ function rootReducer (state= initialState, action) {
                 action.payload === "Status" ?
                 allCharacters :
                 allCharacters.filter(el => el.status === action.payload)
-
-
             return{
                 ...state,
                 characters: statusFiltered
@@ -57,7 +55,6 @@ function rootReducer (state= initialState, action) {
                 action.payload === "Create" ?
                 allC.filter(el => el.db === true) :
                 allC.filter(el=> el.db !== true)
-
             return {
                 ...state,
                 characters: createFiltered
@@ -77,9 +74,7 @@ function rootReducer (state= initialState, action) {
                 ...state
             }
         default: return state
-
     }
-
 }
 
 export default rootReducer;

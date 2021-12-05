@@ -6,7 +6,6 @@
 .containerGlobalLanding {
     display: flex;
     padding-bottom: 119px;
-
     background-image: url('./img/Background.jpg');
     background-size: cover;
 }
