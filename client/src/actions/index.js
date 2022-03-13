@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getCharacters() {
     return async function(dispatch){
-        var json = await axios.get("http://localhost:3001/characters",{})
+        var json = await axios.get("/characters",{})
         return dispatch ({
             type: "GET_CHARACTERS",
             payload: json.data
@@ -13,7 +13,7 @@ export function getCharacters() {
 export function getNameCharacter(payload) {
     return async function(dispatch){
         try {
-            let json = await axios.get('http://localhost:3001/characters?name=' + payload)
+            let json = await axios.get('/characters?name=' + payload)
             return dispatch({
                 type: 'GET_NAME_CHARACTER',
                 payload: json.data
@@ -49,7 +49,7 @@ export function filterByCreate(payload){
 export function getDetail(payload){
     return async function (dispatch){
         try {
-            const json = await axios.get("http://localhost:3001/character/" + payload)
+            const json = await axios.get("/character/" + payload)
             return dispatch({
                 type: "GET_DETAILS",
                 payload: json.data
@@ -63,7 +63,7 @@ export function getDetail(payload){
 export function getOccupations() {
     return async function (dispatch){
         try{
-            const info = await axios.get('http://localhost:3001/occupations', {})
+            const info = await axios.get('/occupations', {})
             return dispatch({
                 type: "GET_OCCUPATIONS",
                 payload: info.data
@@ -76,7 +76,7 @@ export function getOccupations() {
 
 export function postCharacter(payload) {
     return async function(dispatch){
-        const info = await axios.post("http://localhost:3001/character", payload)
+        const info = await axios.post("/character", payload)
         console.log("OCC")
         console.log(payload)
         return info
